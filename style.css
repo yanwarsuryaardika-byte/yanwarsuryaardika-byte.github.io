@@ -544,6 +544,10 @@ a {
   object-fit: cover;
 }
 
+.project-image img.image-load-failed {
+  display: none;
+}
+
 .image-placeholder {
   padding: 24px;
   font-size: 1.05rem;

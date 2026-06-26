@@ -19,9 +19,16 @@ navItems.forEach((link) => {
 });
 
 images.forEach((image) => {
-  image.addEventListener("error", () => {
-    image.style.display = "none";
-  });
+  const hideFailedImage = () => {
+    image.classList.add("image-load-failed");
+    image.setAttribute("aria-hidden", "true");
+  };
+
+  image.addEventListener("error", hideFailedImage);
+
+  if (image.complete && image.naturalWidth === 0) {
+    hideFailedImage();
+  }
 });
 
 const setActiveLink = () => {
