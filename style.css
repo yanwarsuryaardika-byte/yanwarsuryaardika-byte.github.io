@@ -548,6 +548,15 @@ a {
   display: none;
 }
 
+.project-publication-preview {
+  height: 220px;
+  aspect-ratio: auto;
+}
+
+.project-publication-preview img {
+  object-position: top;
+}
+
 .image-placeholder {
   padding: 24px;
   font-size: 1.05rem;
