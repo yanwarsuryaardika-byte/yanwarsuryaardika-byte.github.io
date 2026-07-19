@@ -1,3 +1,8 @@
+/* ==========================================================================
+   PORTFOLIO STYLESHEET
+   Optimized & Enhanced Version (With Interactive Profile Photo)
+   ========================================================================== */
+
 :root {
   --color-navy: #0f2742;
   --color-navy-dark: #081b2f;
@@ -13,7 +18,7 @@
   --color-gray-800: #243447;
   --shadow-soft: 0 22px 60px rgba(15, 39, 66, 0.13);
   --shadow-card: 0 14px 34px rgba(15, 39, 66, 0.08);
-  --shadow-hover: 0 22px 44px rgba(15, 39, 66, 0.12);
+  --shadow-hover: 0 20px 38px rgba(15, 39, 66, 0.14);
   --radius: 8px;
   --max-width: 1120px;
 }
@@ -29,11 +34,12 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   color: var(--color-gray-800);
   background: var(--color-white);
   line-height: 1.7;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -75,6 +81,7 @@ a {
   border-bottom: 1px solid var(--color-gray-100);
   box-shadow: 0 10px 30px rgba(15, 39, 66, 0.04);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .navbar {
@@ -274,8 +281,8 @@ a {
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(29, 114, 216, 0.2);
 }
 
 .btn-primary {
@@ -358,6 +365,12 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
 }
 
 .avatar-placeholder,
@@ -441,14 +454,14 @@ a {
   border-radius: var(--radius);
   background: var(--color-white);
   box-shadow: var(--shadow-card);
-  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
 .skill-category:hover,
 .project-card:hover,
 .certificate-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(29, 114, 216, 0.18);
+  transform: translateY(-6px);
+  border-color: rgba(29, 114, 216, 0.3);
   box-shadow: var(--shadow-hover);
 }
 
@@ -542,6 +555,11 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.06);
 }
 
 .project-image img.image-load-failed {
@@ -582,6 +600,11 @@ a {
 .status-muted {
   color: var(--color-gray-600);
   background: var(--color-gray-100);
+}
+
+.status-progress {
+  color: #b45309;
+  background: #fef3c7;
 }
 
 .project-body p,

@@ -52,7 +52,10 @@
         <div class="profile-card" aria-label="Profile photo">
           <div class="profile-accent" aria-hidden="true"></div>
           <div class="profile-photo-wrap">
-            <img class="profile-photo" src="assets/images/profile-photo.png" alt="Portrait of Yanwar Surya Ardika">
+            <!-- Bungkus foto profil dengan tautan ke file asli agar bisa diklik penuh seperti WA -->
+            <a href="assets/images/profile-photo.png" target="_blank" title="Klik untuk melihat foto penuh">
+              <img class="profile-photo" src="assets/images/profile-photo.png" alt="Portrait of Yanwar Surya Ardika">
+            </a>
             <div class="avatar-placeholder" aria-hidden="true">YSA</div>
           </div>
           <div class="profile-meta">
@@ -162,7 +165,8 @@
               <div class="image-placeholder">Inventory Dashboard</div>
             </div>
             <div class="project-body">
-              <span class="status-badge">In Progress</span>
+              <!-- Menerapkan kelas warna progress baru yang kontras -->
+              <span class="status-badge status-progress">In Progress</span>
               <h3>Supply Chain Inventory Monitoring Dashboard</h3>
               <p>
                 A dashboard project to monitor inventory status, stock levels, reorder needs,
@@ -385,9 +389,9 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <header class="site-footer">
     <p>&copy; 2026 Yanwar Surya Ardika. All rights reserved.</p>
-  </footer>
+  </header>
 
   <script src="script.js"></script>
 </body>
