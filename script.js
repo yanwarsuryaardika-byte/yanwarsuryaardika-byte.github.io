@@ -48,3 +48,30 @@ const setActiveLink = () => {
 
 window.addEventListener("scroll", setActiveLink);
 window.addEventListener("load", setActiveLink);
+
+const experiencePhotos = document.querySelectorAll(".experience-media img");
+const photoExtensions = [".jpg", ".jpeg", ".png", ".JPG", ".JPEG"];
+
+experiencePhotos.forEach((photo) => {
+  const link = photo.closest("a");
+  const basePath = photo.getAttribute("src").replace(/\.[^./]+$/, "");
+  let attempt = 0;
+
+  const tryNextExtension = () => {
+    attempt += 1;
+    if (attempt < photoExtensions.length) {
+      const nextSrc = basePath + photoExtensions[attempt];
+      photo.src = nextSrc;
+      if (link) link.href = nextSrc;
+    } else {
+      photo.classList.add("image-load-failed");
+      photo.setAttribute("aria-hidden", "true");
+    }
+  };
+
+  photo.addEventListener("error", tryNextExtension);
+
+  if (photo.complete && photo.naturalWidth === 0) {
+    tryNextExtension();
+  }
+});
